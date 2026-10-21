@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#17142b">
+  <title>Top Secret Birthday Mission</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="confetti confetti-one" aria-hidden="true"></div>
+  <main class="app">
+    <header class="topbar">
+      <div class="brand-mark" aria-hidden="true">🎂</div>
+      <div>
+        <p class="eyebrow">OFFICIAL-ISH BIRTHDAY SECURITY</p>
+        <h1>Top Secret Birthday Mission</h1>
+      </div>
+      <span class="stamp">100%<br>NOT FBI</span>
+    </header>
+
+    <section id="intro-screen" class="panel intro-panel">
+      <div class="hero-icon" aria-hidden="true">🕵️</div>
+      <p class="eyebrow">CONFIDENTIAL • PROBABLY</p>
+      <h2>Prove you're worthy of cake.</h2>
+      <p class="lead">Answer 5 extremely important questions. Pass with <strong>70%</strong> or higher to unlock a highly classified birthday invitation.</p>
+      <div class="warning-note"><span aria-hidden="true">⚠️</span> Warning: this test may expose your questionable friendship skills.</div>
+      <button id="start-btn" class="button button-primary">Begin the investigation <span aria-hidden="true">→</span></button>
+      <p class="microcopy">No actual intelligence agencies were involved.</p>
+    </section>
+
+    <section id="quiz-screen" class="panel quiz-panel hidden" aria-live="polite">
+      <div class="quiz-meta">
+        <span id="question-count">QUESTION 1 OF 5</span>
+        <span id="score-preview">Current score: 0</span>
+      </div>
+      <div class="progress-track"><div id="progress-bar" class="progress-bar"></div></div>
+      <p id="question-category" class="eyebrow">FRIENDSHIP AUDIT</p>
+      <h2 id="question-text">Question goes here</h2>
+      <p id="question-hint" class="hint">Choose wisely. The cake is watching.</p>
+      <div id="answers" class="answers"></div>
+      <p id="feedback" class="feedback" role="status"></p>
+      <button id="next-btn" class="button button-primary" disabled>Lock in answer</button>
+      <p class="microcopy">Tip: the examiner is easily impressed by confidence.</p>
+    </section>
+
+    <section id="result-screen" class="panel result-panel hidden" aria-live="polite">
+      <div id="result-icon" class="hero-icon" aria-hidden="true">🧾</div>
+      <p id="result-eyebrow" class="eyebrow">INVESTIGATION COMPLETE</p>
+      <h2 id="result-title">Results are in.</h2>
+      <p id="result-message" class="lead"></p>
+      <div class="score-card"><span>Your score</span><strong id="final-score">0/5</strong><span id="score-percent">0%</span></div>
+      <button id="retry-btn" class="button button-primary">Try again ↻</button>
+      <p class="microcopy">Retakes are unlimited. Dignity recovery is not guaranteed.</p>
+    </section>
+
+    <section id="invite-screen" class="panel invite-panel hidden" aria-live="polite">
+      <div class="invite-top">
+        <p class="eyebrow">CLASSIFIED DOCUMENT • OPEN IMMEDIATELY</p>
+        <div class="big-cake" aria-hidden="true">🎂</div>
+        <h2>YOU HAVE BEEN INVITED!</h2>
+        <p class="invite-subtitle">Your mission: show up, eat cake, and act surprised.</p>
+      </div>
+      <div class="invite-details">
+        <div class="detail-row"><span>🎉 Birthday legend</span><strong id="invite-name">[Birthday person's name]</strong></div>
+        <div class="detail-row"><span>📅 Date</span><strong id="invite-date">[Add birthday date]</strong></div>
+        <div class="detail-row"><span>📍 Location</span><strong id="invite-venue">[Add party venue]</strong></div>
+        <div class="detail-row"><span>🕒 Dress code</span><strong>[Optional: your best outfit]</strong></div>
+      </div>
+      <div class="mission-note">MANDATORY ACTIVITIES: cake consumption, questionable dancing, and pretending you didn't come just for the food.</div>
+      <p class="lead invite-final">Your attendance is requested. Your dance moves are not guaranteed to be accepted.</p>
+      <div class="invite-actions">
+        <button id="edit-details-btn" class="button button-secondary">Edit invitation details</button>
+        <button id="share-btn" class="button button-primary">Share invitation ↗</button>
+      </div>
+      <p id="share-status" class="microcopy" role="status"></p>
+      <button id="restart-btn" class="text-button">Replay the quiz</button>
+    </section>
+
+    <footer class="footer">
+      <span>© The Department of Cake & Nonsense</span>
+      <span>Secure-ish • Silly by design</span>
+    </footer>
+  </main>
+
+  <dialog id="edit-dialog" class="edit-dialog">
+    <form method="dialog" id="edit-form">
+      <div class="dialog-heading">
+        <div>
+          <p class="eyebrow">CUSTOMIZE YOUR INVITE</p>
+          <h2>Fill in the top-secret details</h2>
+        </div>
+        <button class="close-button" value="cancel" aria-label="Close">×</button>
+      </div>
+      <label for="name-input">Birthday person's name</label>
+      <input id="name-input" name="name" placeholder="e.g. Alex" maxlength="80">
+      <label for="date-input">Date and time</label>
+      <input id="date-input" name="date" placeholder="e.g. 24 November, 7:00 PM" maxlength="100">
+      <label for="venue-input">Venue</label>
+      <input id="venue-input" name="venue" placeholder="e.g. The usual hangout" maxlength="140">
+      <div class="dialog-actions">
+        <button class="button button-secondary" value="cancel">Cancel</button>
+        <button id="save-details-btn" class="button button-primary" value="save">Save details</button>
+      </div>
+      <p class="microcopy">Details are saved only in this page while it is open; they are not sent to a server.</p>
+    </form>
+  </dialog>
+
+  <script src="script.js"></script>
+</body>
+</html>
